@@ -3,7 +3,7 @@ const express = require('express');
 // Iniciar express
 const app = express();
 // nome da pasta no dist que será feito o build
-const appName = 'meetingroomfront'
+const appName = 'client-room'
 // local onde o build irá gerar os arquivos
 const outputPath = `${__dirname}/dist/${appName}`;
 
@@ -15,3 +15,5 @@ app.get('/*', (req, res) =>{
 });
 // ouvir a porta que o heroku disponibilizar
 app.listen(process.env.PORT);
+
+
