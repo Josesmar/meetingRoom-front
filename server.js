@@ -1,18 +1,17 @@
-//Install express server
+// importar express
 const express = require('express');
-const path = require('path');
+// Iniciar express
 const app = express();
+// nome da pasta no dist que será feito o build
+const appName = 'meetingroomfront'
+// local onde o build irá gerar os arquivos
+const outputPath = `${__dirname}/dist/${appName}`;
 
-const PORT = process.env.PORT || 8080;
-
-// Serve only the static files form the dist directory
-app.use(express.static(_dirname + './dist/client-room'));
-
-app.get('/*', (req, res) =>
-    res.sendFile(_dirname + 'dist/client-room/index.htmnl'),
-);
-
-// Start the app by listening on the default Heroku port
-app.listen(PORT, ()=> {
-app.log('Servidor iniciado na porta' + PORT);
-})
+// seta o diretório de build para servir o conteúdo angular
+app.use(express.static(outputPath));
+// redirecionar qualquer requisição para o index.html
+app.get('/*', (req, res) =>{
+    res.sendFile(`${outputPath}/index.html`);
+});
+// ouvir a porta que o heroku disponibilizar
+app.listen(process.env.PORT);
