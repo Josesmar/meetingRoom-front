@@ -10,7 +10,7 @@
     "e2e": "ng e2e"
   },
   "enginers": {
-    "node": "14.17.3npm",
+    "node": "14.17.3",
     "npm": "7.20.1"
   },
   "private": true,
