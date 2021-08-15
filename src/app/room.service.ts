@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class RoomService {
 
-  private baseUrl = 'https://meetingroom-josesmar.herokuapp.com/rooms/api/v1/rooms';
+  private baseUrl = 'https://meetingroom-josesmar.herokuapp.com/api/v1/rooms';
 
   constructor(private http: HttpClient) { }
 
